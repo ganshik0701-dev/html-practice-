@@ -1,0 +1,35 @@
+<form id="userForm">
+  <div style="margin-bottom: 10px;">
+    <label>이름:</label><br>
+    <input type="text" name="username" placeholder="이름" required><br>
+  
+    <label>이메일:</label><br>
+    <input type="email" name="email" placeholder="email@example.com" required><br>
+  
+    <label>비밀번호:</label><br>
+    <input type="password" id="pw1" name="password" minlength="8" required><br>
+    
+    <label>비밀번호 확인:</label><br>
+    <input type="password" id="pw2" name="password_confirm" minlength="8" required><br>
+
+    <label>생일:</label><br>
+    <input type="date" name="birthday"><br>
+    
+    <button type="submit" style="margin-top: 10px;">입력값 확인하기</button>
+  </div>
+</form>
+
+<script>
+  // 폼이 제출될 때 실행되는 함수
+  document.getElementById('userForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // 페이지가 새로고침되는 것을 막음
+
+    // 입력값들을 가져옴
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+
+    // 알림창으로 입력값 확인
+    alert(`입력하신 이름은 ${data.username} 입니다!`);
+    console.log("전체 데이터:", data); // 개발자 도구(F12) 콘솔에서 확인 가능
+  });
+</script>
