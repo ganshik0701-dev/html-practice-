@@ -1,0 +1,62 @@
+<form>
+  <div style="margin-bottom: 10px;">
+    <label for ="username">이름:</label><br>
+    <input type="text" name="username"placeholder="이름" id="username"><br>
+  
+    <label for ="email">이메일:</label><br>
+    <input type="email" name="email" placeholder="email@example.com" id="email"><br>
+  
+    <label for="password">비밀번호:</label><br>
+    <input type="password" name="password" id="password"minlength="8"><br>
+    
+    <label for="password">비밀번호 확인:</label><br>
+    <input type="password" name="password_confirm" id= "password" minlength="8"><br>
+ 
+    <label for= "birthday">생일:</label><br>
+    <input type="date" name="birthday" value="birthday"id="birthday"><br>
+
+    <label>-성별- </label><br>
+    <label for="male">남성</label>
+    <input type="radio" name="gender" value="male" id="male">
+    <label for="female">여성</label> <!--id기반-->
+    <input type="radio" name="gender" value="female" id="female"><br>
+
+    
+    <label>-관심분야- </label><br>
+    <input type="checkbox" name="interest" value="tech" id="tech">
+      <label for="tech">IT / 기술</label>
+    <input type="checkbox" name="interest" value="design" id="design">
+      <label for="design">디자인</label>
+    <input type="checkbox" name="interest" value="marketing" id="marketing">
+      <label for="marketing">마케팅</label>
+    <input type="checkbox" name="interest" value="business" id="business">
+      <label for="business">경영 / 전략</label><br>
+
+
+    <button type="submit" style="margin-top: 10px;">입력값 확인하기</button>
+    <button type="reset">초기화</button>
+
+  
+    
+
+  </div>
+
+
+
+  <!-- <script> 
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+
+  console.log("전체 데이터:", data); 
+</script> -->
+
+
+
+
+
+
+
+
+
+
+</form>

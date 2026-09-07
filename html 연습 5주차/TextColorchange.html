@@ -1,0 +1,23 @@
+<h1 id="title">제목</h1>
+<button id="redBtn">빨강</button>
+<button id="blueBtn">파랑</button>
+<button id="greenBtn">초록</button>
+
+<script>
+    const title = document.querySelector('#title');
+const redBtn = document.querySelector('#redBtn');
+const blueBtn = document.querySelector('#blueBtn');
+const greenBtn = document.querySelector('#greenBtn');
+
+redBtn.addEventListener('click', () => {
+    title.style.color = 'red';
+});
+
+blueBtn.addEventListener('click', () => {
+    title.style.color = 'blue';
+});
+
+greenBtn.addEventListener('click', () => {
+    title.style.color = 'green';
+});
+</script>

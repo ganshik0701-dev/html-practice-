@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>색상 변경기</title>
+    <style>
+        body {
+            transition: background-color 0.3s;
+            padding: 50px;
+        }
+        .controls {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input[type="range"] {
+            width: 255px;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <h1>색상 변경기</h1>
+
+        <label>Red: <span id="redValue">0</span></label>
+        <input type="range" id="red" min="0" max="255" value="0">
+
+        <br><br>
+
+        <label>Green: <span id="greenValue">0</span></label>
+        <input type="range" id="green" min="0" max="255" value="0">
+
+        <br><br>
+
+        <label>Blue: <span id="blueValue">0</span></label>
+        <input type="range" id="blue" min="0" max="255" value="0">
+
+        <br><br>
+
+        <p id="colorCode">RGB: rgb(0, 0, 0)</p>
+        <button id="randomBtn">랜덤 색상</button>
+    </div>
+
+    <script>
+        // 각 요소(슬라이더, 숫자 표시창, 배경색 텍스트, 버튼) 가져오기
+        const redInput = document.getElementById('red');
+        const greenInput = document.getElementById('green');
+        const blueInput = document.getElementById('blue');
+
+        const redValue = document.getElementById('redValue');
+        const greenValue = document.getElementById('greenValue');
+        const blueValue = document.getElementById('blueValue');
+
+        const colorCode = document.getElementById('colorCode');
+        const randomBtn = document.getElementById('randomBtn');
+
+        // 색상을 업데이트하는 함수
+        function updateColor() {
+            const r = redInput.value;
+            const g = greenInput.value;
+            const b = blueInput.value;
+
+            // 숫자 텍스트 업데이트
+            redValue.textContent = r;
+            greenValue.textContent = g;
+            blueValue.textContent = b;
+
+            // 배경색 및 RGB 코드 텍스트 업데이트
+            const rgb = `rgb(${r}, ${g}, ${b})`;
+            document.body.style.backgroundColor = rgb;
+            colorCode.textContent = `RGB: ${rgb}`;
+        }
+
+        // 각 슬라이더에 이벤트 리스너 추가 (움직일 때마다 실행)
+        redInput.addEventListener('input', updateColor);
+        greenInput.addEventListener('input', updateColor);
+        blueInput.addEventListener('input', updateColor);
+
+        // 랜덤 색상 버튼 클릭 이벤트
+        randomBtn.addEventListener('click', () => {
+            // 0~255 사이의 랜덤 숫자 생성 후 슬라이더 값 변경
+            redInput.value = Math.floor(Math.random() * 256);
+            greenInput.value = Math.floor(Math.random() * 256);
+            blueInput.value = Math.floor(Math.random() * 256);
+    
+            // 화면 업데이트
+            updateColor();
+        });
+
+        // 페이지 로드 시 초기값 반영
+        updateColor();
+    </script>
+</body>
+</html>

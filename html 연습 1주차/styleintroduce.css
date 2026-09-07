@@ -1,0 +1,16 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    background-color: rgb(194, 225, 236);
+}
+
+h1 {
+    text-align: center;
+    
+    text-decoration:underline;
+}
+
+nav {
+text-decoration: none;
+
+}

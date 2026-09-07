@@ -1,0 +1,64 @@
+<!DOCTYPE html> <!--버전 선언 (최신식이야!)-->
+<html lang="ko">
+<head>  <!--사람의 생각처럼 겉으로 보이지는 않지만, 페이지의 제목(title), 설정(한글 설정 등) 정보 -->
+    
+    <meta charset="UTF-8"> <!--언어 설정 -->
+    <title>나의 첫 페이지</title>  <!--웹 사이트 위에 제목 -->
+    <meta name="description" content="비전공자 박현이 HTML부터 차근차근 배워가는 성장 기록입니다.">
+    <!-- 검색할때 나오는 소개글 -->
+     <link rel="stylesheet" href="styleintroduce.css">
+</head>
+
+
+
+
+<body> <!-- 몸. 우리가 웹 브라우저 화면에서 실제로 보는 모든 글과 그림이 들어갑니다.-->
+    <h1>안녕하세요 제 이름은 박현입니다!</h1> 
+    <p>저는 ict융합학부 23학번 2학년입니다. 
+    <br> <!-- 줄바꿈-->
+    오늘부터 HTML 공부를 시작했어요.반갑습니다.</p>
+    <p>오늘은 간단히 html기본적인내용과 헤더, 시맨틱 테그에 대해서 간단히 공부할 꺼에요 </p>
+<!-- 
+    <h1> ~ <h6> (Heading): 제목입니다. 숫자가 커질수록 글씨가 작아지고 중요도도 낮아집니다.
+    <p> (Paragraph): 일반적인 본문 문단입니다. 태그가 끝나면 자동으로 줄바꿈이 일어납니다.
+    <br> (Break): 문단을 나누지 않고 단순히 줄바꿈만 하고 싶을 때 씁니다. (닫는 태그 없음)
+ -->
+    <h2>나의 소개</h2>
+        <img src="https://www.artinsight.co.kr/data/tmp/1908/e6a68cd9b35104f31d3e053366cc56a6_E2TgM8FOhkpFMbZl.jpg" width="300" height="200"alt="온라인 이미지">
+
+
+    <h3>내가 좋아하는 음식</h3>
+    <ul> <!--(Unordered List): 순서가 없는 목록 (점· 기호).-->
+        <li>치킨</li> <!--(List Item): 목록의 각 항목입니다. 반드시 <ul>이나 <ol> 안에 들어가야 함-->
+        <li>피자</li>
+        <li>초밥</li>
+    </ul>
+    <h3>내가 좋아하는 음식 이유!</h3>
+    <ol> <!--(Ordered List): 순서가 있는 목록 (1, 2, 3... 숫자).-->
+        <li>치킨->바삭함</li>
+        <li>피자->고소함</li>
+        <li>초밥->신선함</li>
+    </ol>
+
+
+
+    <h3>좋아하는 웹사이트 링크!</h3>
+    <nav>
+        <a href="https://www.naver.com/">네이버 기존탭으로 열기</a>
+        <br>
+        <a href="https://www.naver.com" target="_blank">네이버 새 탭에서 열기</a>
+        <br>
+        <a href="https://www.youtube.com/">유튭</a>
+        <br>
+        <a href="https://www.youtube.com/" target="_blank">유튭 새 탭에서 열기</a>
+        <br>
+    <!-- navigation의 줄임말로, 웹사이트에서 메뉴, 목차, 색인처럼 다른 페이지나 현재 페이지의 다른 부분으로 연결하는 링크들의 집합을 감싸는 태그 -->
+
+        <!-- 이미지 -->
+        <img src="image/test123.jpg" width="300" height="200" alt="이미지 설명">
+        
+    </nav>
+
+
+</body>
+</html>

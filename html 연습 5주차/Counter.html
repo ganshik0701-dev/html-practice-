@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>카운터</title>
+    <style>
+        #count {
+            font-size: 48px;
+            font-weight: bold;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>카운터</h1>
+    <div id="count">0</div>
+    <button id="increase">증가</button>
+    <button id="decrease">감소</button>
+    <button id="reset">초기화</button>
+
+    <script>
+        const countDisplay = document.querySelector('#count');
+        const increaseBtn = document.querySelector('#increase');
+        const decreaseBtn = document.querySelector('#decrease');
+        const resetBtn = document.querySelector('#reset');
+
+        let count = 0;
+
+        increaseBtn.addEventListener('click', () => {
+            count++;
+            countDisplay.textContent = count;
+        });
+
+        decreaseBtn.addEventListener('click', () => {
+            count--;
+            countDisplay.textContent = count;
+        });
+
+        resetBtn.addEventListener('click', () => {
+            count = 0;
+            countDisplay.textContent = count;
+        });
+    </script>
+</body>
+</html>

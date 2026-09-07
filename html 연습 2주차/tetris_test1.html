@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>심플 테트리스 구현 </title>
+    <style>
+        body { background: #202028; color: #fff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; }
+        canvas { border: solid 2px #fff; background-color: #000; } /*게임판 디자인*/
+        .text_info { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>테트리스 코딩 만들어보기</h1>
+    <canvas id="tetris" width="240" height="400"></canvas> <!---canvas 지정-->
+    <div class="text_info">화살표 키로 조작하세요!</div> <!-- info라는 이름으로 지정 -->
+
+    <script>
+        const canvas = document.getElementById('tetris');
+        const context = canvas.getContext('2d');
+        //현재 제작 단계: 일단 기능 없음, 배경및 도형 1개 구현
+        // 1단위를 20px로 확장
+        context.scale(20, 20);
+
+        // T자형 블록 예시 (2차원 배열)
+        const matrix = [
+            [0, 0, 0],
+            [1, 1, 1],
+            [0, 1, 0],
+        ];
+
+        // 그리기 함수
+        function draw() {
+            // 배경 지우기
+            context.fillStyle = '#000';
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
+            drawMatrix(matrix, {x: 5, y: 5});
+        }
+
+        function drawMatrix(matrix, offset) {
+            matrix.forEach((row, y) => {
+                row.forEach((value, x) => {
+                    if (value !== 0) {
+                        context.fillStyle = 'red';
+                        context.fillRect(x + offset.x, y + offset.y, 1, 1);
+                    }
+                });
+            });
+        }
+
+        // 초기 실행
+        draw();
+    </script>
+</body>
+</html>
